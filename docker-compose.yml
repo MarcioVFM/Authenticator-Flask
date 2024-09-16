@@ -1,0 +1,18 @@
+services:
+  db:
+    image: mysql:latest
+    #pede para subir um banco mysql na ultima versao
+    restart: always
+    environment:
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'admin123'
+      MYSQL_DATABASE: 'flask-crud'
+      MYSQL_ROOT_PASSWORD: 'admin123'
+    ports:
+      - "3306:3306"
+    expose:
+      # Opens port 3306 on the container
+      - '3306'
+    volumes:
+    #local de armazenamento de volume, se nao fizer 
+     - "C:/novo/banco_mysql:/var/lib/mysql"
